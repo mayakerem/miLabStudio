@@ -1,0 +1,29 @@
+{
+  "name": "milabstudio",
+  "version": "1.0.0",
+  "description": "miLab@IDC Studio Project for Transportation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayakerem/miLabStudio.git"
+  },
+  "author": "Maya Kerem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayakerem/miLabStudio/issues"
+  },
+  "homepage": "https://github.com/mayakerem/miLabStudio#readme",
+  "dependencies": {
+    "bfs-as-promised": "^1.0.4",
+    "data-tree": "^1.2.4",
+    "express": "^4.16.4",
+    "graph-data-structure": "^1.8.0",
+    "install": "^0.12.2",
+    "npm": "^6.5.0",
+    "regex": "^0.1.1",
+    "simple-hashtable": "^1.0.0"
+  }
+}

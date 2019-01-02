@@ -5,23 +5,43 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const records = require('records');
+// https://www.npmjs.com/package/data-tree 
+const graph = require('data-tree');
+// https://www.npmjs.com/package/regex 
+const regex = require('regex')
 
-class user {
+class user extends records {
+    id
     name
     phonenumber
     records
+    graph
 
-    constructor(name, phonenumber, records) {
-		this.name = name;
+    constructor(id, name, phonenumber, records, graph) {
+        this.id = id;
+        this.name = name;
         this.phonenumber = phonenumber;
-        this.records = records;		
+        this.records = records;	
+        this.graph = graph;	
 	}
 
     normalize_phonenumber(phonenumber){
-        //use regex
+                                //group number is hte actual Id
+        var regex = new Regex(/((0)+|[+])([ ]*)(([0-9]-)*)((972)*)([ ]*)(.*)/);
+        if (phonenumber)
     }
     
-    //get
+    // Constructing tree
+    newGraph (){
+        this.graph = dataTree.create();
+    }
 
+// for every new ride
+new_ride (rider, driver) {
+    tree.insert({
+        key: '#apple',
+        value: { name: 'Apple', color: 'Red'}
+    });
+}
 
 }

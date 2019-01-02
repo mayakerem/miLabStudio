@@ -3,18 +3,18 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+// https://www.npmjs.com/package/simple-hashtable
+const SimpleHashTable = require('simple-hashtable');
 
 class records {
-    //implement
 
-    constructor(name, phonenumber, records) {
-		this.name = name;
-        this.phonenumber = phonenumber;
-        this.records = records;		
+    constructor(owner) {
+        var hashtable = new SimpleHashTable();
+        this.owner = owner;	
 	}
 
-    normalize_phonenumber(phonenumber){
-        //use regex
+    newride (name){
+        hashtable.put(name, name.phone)
     }
     
     //get
