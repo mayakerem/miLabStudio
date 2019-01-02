@@ -13,12 +13,12 @@ class records {
         this.owner = owner;	
 	}
 
-    newride (name){
-        hashtable.put(name, name.phone)
+    // Once a new carpooling happened, adding him to user's hashtable
+    // in the future we want to add a condition for if the ride was successfull
+    newDriver (name){
+        hashtable.put(name, name.phone);
+        return;
     }
-    
-    //get
-
-    //update
 
 }
+module.exports = Records;

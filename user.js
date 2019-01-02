@@ -9,14 +9,11 @@ const records = require('records');
 const graph = require('data-tree');
 // https://www.npmjs.com/package/regex 
 const regex = require('regex')
+// Allowing to use records
+const records = require('./records')
 
 class user extends records {
-    id
-    name
-    phonenumber
-    records
-    graph
-
+  
     constructor(id, name, phonenumber, records, graph) {
         this.id = id;
         this.name = name;
@@ -25,23 +22,39 @@ class user extends records {
         this.graph = graph;	
 	}
 
-    normalize_phonenumber(phonenumber){
-                                //group number is hte actual Id
-        var regex = new Regex(/((0)+|[+])([ ]*)(([0-9]-)*)((972)*)([ ]*)(.*)/);
-        if (phonenumber)
-    }
-    
-    // Constructing tree
+    // Constructing tree and adding the first root node
+    // Root node has a value of an array of size 2 with the name and phone number
+    // and a hashtable of records 
     newGraph (){
-        this.graph = dataTree.create();
+        graph = dataTree.create();
+        var node = graph.insert({
+            key: [name, phonenumber],
+            value: records
+          });
     }
 
-// for every new ride
-new_ride (rider, driver) {
-    tree.insert({
-        key: '#apple',
-        value: { name: 'Apple', color: 'Red'}
-    });
-}
+    // Adding a new user as a node
+    addPhoneContact (name, phonenumber){
+        this.graph.insert({
+            key: [name, phonenumber],
+            value: records
+          });
+        return;
+    }
+
+    // Adding a new driver to user's record history
+    newRideForUser (user){
+        this.records.newDriver(user);
+    }
+
+    // A function for the future. Normalizing all the phone numbers so they can be used
+    // as proper IDs
+    normalizePhoneNumber(phonenumber) {
+        //group number 9 is the actual number we want to use
+        var regex = new Regex(/((0)+|[+])([ ]*)(([0-9]-)*)((972)*)([ ]*)(.*)/);
+        //should add a +972 based on the local location
+        return //group 9 of the regex above
+    }
 
 }
+module.exports = User;
